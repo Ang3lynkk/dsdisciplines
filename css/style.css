@@ -334,8 +334,8 @@
      }
 
      .logo-escola {
-         top: 1.75rem;
-         right: 1.75rem;
+        top: 1.75rem;
+        left: 1.75rem;
          max-height: 145px;
      }
 
@@ -347,3 +347,43 @@
          padding: .9rem .9rem 1.1rem;
      }
  }
+
+/* Responsividade adicional para grids e tipografia */
+.weeks-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 1000px) {
+    .weeks-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .weeks-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .weeks-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 1.25rem;
+    }
+
+    .logo-curso,
+    .logo-escola {
+        /* Esconde logos em celulares para melhorar adaptabilidade */
+        display: none;
+    }
+}
+
+/* Tipografia fluida */
+header h1 {
+    font-size: clamp(1.25rem, 2.2vw, 1.8rem);
+}
